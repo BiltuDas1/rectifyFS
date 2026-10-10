@@ -1,10 +1,12 @@
+#pragma once
+
 #include "../config/constrains.hpp"
 #include "../device/block_device.hpp"
 #include <stdexcept>
 
 class BitMap {
   public:
-    BitMap(BlockDevice& disk, BlockID start, uint64_t total_blocks)
+    explicit BitMap(BlockDevice& disk, BlockID start, uint64_t total_blocks)
     : start_block(start),
       total_blocks(total_blocks),
       disk(disk) {}
